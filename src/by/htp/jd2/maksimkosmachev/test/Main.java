@@ -48,12 +48,12 @@ public class Main {
             SQLUserDAO sqlUserDAO = new SQLUserDAO();
            // User user = sqlUserDAO.signIn("Ivan", "123456");
             User user=new User();
-            user.setLogin("Valera");
-            user.setPassword("43218763");
-            user.setEmail("asdasd@gmail.com");
-            user.setName("Valera");
-            user.setSurname("Pupkin");
-            //user.setRole(Role.ADMINISTRATOR);
+            user.setLogin("Vlad");
+            user.setPassword("77777");
+            user.setEmail("reaart@gmail.com");
+            user.setName("Vlad");
+            user.setSurname("Petrov");
+            user.setRole(Role.ADMINISTRATOR);
             boolean status=sqlUserDAO.registration(user);
             System.out.println(user);
             System.out.println(status);

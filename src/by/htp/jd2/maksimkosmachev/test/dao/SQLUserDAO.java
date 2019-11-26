@@ -77,9 +77,10 @@ public class SQLUserDAO implements UserDAO {
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
+
         ConnectionPool connectionPool = ConnectionPool.getInstance();
         Connection connection = connectionPool.takeConnection();
-        preparedStatement = connection.prepareStatement(FIND_BY_LOGIN);
+        preparedStatement = connection.prepareStatement(FIND_BY_LOGIN); // checking login if such user exists or not in DB
         preparedStatement.setString(1, user.getLogin());
         resultSet = preparedStatement.executeQuery();
         logger.info("Try to find by login");
@@ -88,29 +89,30 @@ public class SQLUserDAO implements UserDAO {
             throw new SuchUserExistException("Such user already exists! Try to use another login for registration! ");
 
         }
-            // connection.setAutoCommit(false);
+            // make transaction - registration user details, than registration user data;
+            connection.setAutoCommit(false);
             logger.info("Try to register user details ");
             preparedStatement = connection.prepareStatement(REGISTER_USER_DETAILS, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getSurname());
-           // preparedStatement.setString(3, user.getRole().toString());
+            preparedStatement.setString(3, user.getRole().toString());
             logger.info("Try to execute query "+user);
-            resultSet=preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
             logger.info("Execute query successful");
             //connection.setAutoCommit(true);
             ResultSet userDetailsId = preparedStatement.getGeneratedKeys();
             if (userDetailsId.next()) {
                 user.setUserDetailsId(userDetailsId.getInt(1));
                 logger.info("Insert id user details in table user details: " + user.getUserDetailsId());
+                logger.info(user);
             }
-            // connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(REGISTER_USER_DATA, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.setInt(4, user.getUserDetailsId());
-            preparedStatement.executeQuery();
-            // connection.setAutoCommit(true);
+            preparedStatement.executeUpdate();
+            connection.setAutoCommit(true);
             ResultSet userId = preparedStatement.getGeneratedKeys();
             if (userId.next()) {
                 user.setId(userId.getInt(1));

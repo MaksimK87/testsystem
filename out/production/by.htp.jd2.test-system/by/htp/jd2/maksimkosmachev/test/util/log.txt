@@ -139,3 +139,57 @@ java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
 2019-11-24 10:19:26 INFO  SQLUserDAO:92 - Try to register user details 
 2019-11-24 10:19:26 INFO  SQLUserDAO:97 - Try to execute query Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=0}
 2019-11-24 10:19:26 INFO  Main:63 - Error in SQLjava.sql.SQLException: Can not issue data manipulation statements with executeQuery().
+2019-11-24 10:22:26 INFO  SQLUserDAO:76 - In registration method
+2019-11-24 10:22:27 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-11-24 10:22:27 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-11-24 10:22:27 INFO  ConnectionPool:92 - connection was taken
+2019-11-24 10:22:27 INFO  SQLUserDAO:85 - Try to find by login
+2019-11-24 10:22:27 INFO  SQLUserDAO:92 - Try to register user details 
+2019-11-24 10:22:27 INFO  SQLUserDAO:97 - Try to execute query Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=null, userDetailsId=0}
+2019-11-24 10:22:27 INFO  Main:63 - Error in SQLjava.sql.SQLException: Can not issue data manipulation statements with executeQuery().
+2019-11-24 19:29:50 INFO  SQLUserDAO:76 - In registration method
+2019-11-24 19:29:52 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-11-24 19:29:52 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-11-24 19:29:52 INFO  ConnectionPool:92 - connection was taken
+2019-11-24 19:29:52 INFO  SQLUserDAO:85 - Try to find by login
+2019-11-24 19:29:52 INFO  SQLUserDAO:92 - Try to register user details 
+2019-11-24 19:29:52 INFO  SQLUserDAO:97 - Try to execute query Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=0}
+2019-11-24 19:29:52 INFO  Main:63 - Error in SQLjava.sql.SQLException: Can not issue data manipulation statements with executeQuery().
+2019-11-24 19:32:34 INFO  SQLUserDAO:76 - In registration method
+2019-11-24 19:32:35 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-11-24 19:32:35 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-11-24 19:32:35 INFO  ConnectionPool:92 - connection was taken
+2019-11-24 19:32:35 INFO  SQLUserDAO:85 - Try to find by login
+2019-11-24 19:32:35 INFO  SQLUserDAO:92 - Try to register user details 
+2019-11-24 19:32:35 INFO  SQLUserDAO:97 - Try to execute query Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=0}
+2019-11-24 19:32:35 INFO  SQLUserDAO:99 - Execute query successful
+2019-11-24 19:32:35 INFO  SQLUserDAO:104 - Insert id user details in table user details: 8
+2019-11-24 19:32:35 INFO  Main:63 - Error in SQLjava.sql.SQLException: Can not issue data manipulation statements with executeQuery().
+2019-11-24 19:39:30 INFO  SQLUserDAO:76 - In registration method
+2019-11-24 19:39:30 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-11-24 19:39:30 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-11-24 19:39:30 INFO  ConnectionPool:92 - connection was taken
+2019-11-24 19:39:30 INFO  SQLUserDAO:85 - Try to find by login
+2019-11-24 19:39:30 INFO  SQLUserDAO:92 - Try to register user details 
+2019-11-24 19:39:30 INFO  SQLUserDAO:97 - Try to execute query Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=0}
+2019-11-24 19:39:30 INFO  SQLUserDAO:99 - Execute query successful
+2019-11-24 19:39:30 INFO  SQLUserDAO:104 - Insert id user details in table user details: 9
+2019-11-24 19:39:30 INFO  SQLUserDAO:105 - Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=9}
+2019-11-24 19:39:30 INFO  Main:63 - Error in SQLjava.sql.SQLException: Can not issue data manipulation statements with executeQuery().
+2019-11-24 19:40:47 INFO  SQLUserDAO:76 - In registration method
+2019-11-24 19:40:48 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-11-24 19:40:48 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-11-24 19:40:48 INFO  ConnectionPool:92 - connection was taken
+2019-11-24 19:40:48 INFO  SQLUserDAO:85 - Try to find by login
+2019-11-24 19:40:48 INFO  SQLUserDAO:92 - Try to register user details 
+2019-11-24 19:40:48 INFO  SQLUserDAO:97 - Try to execute query Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=0}
+2019-11-24 19:40:48 INFO  SQLUserDAO:99 - Execute query successful
+2019-11-24 19:40:48 INFO  SQLUserDAO:104 - Insert id user details in table user details: 10
+2019-11-24 19:40:48 INFO  SQLUserDAO:105 - Entity{id=0}User{login='Valera', password='43218763', email='asdasd@gmail.com', name='Valera', surname='Pupkin', role=ADMINISTRATOR, userDetailsId=10}
+2019-11-24 19:40:48 INFO  SQLUserDAO:118 - Insert id user in table user: 5
+2019-11-24 21:16:43 INFO  SQLUserDAO:76 - In registration method
+2019-11-24 21:16:43 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-11-24 21:16:43 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-11-24 21:16:43 INFO  ConnectionPool:92 - connection was taken
+2019-11-24 21:16:44 INFO  SQLUserDAO:85 - Try to find by login
+2019-11-24 21:16:44 ERROR SQLUserDAO:87 - Such user already exists! Try to use another login for registration! 

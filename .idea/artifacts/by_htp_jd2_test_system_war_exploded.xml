@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="by.htp.jd2.test-system:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/by_htp_jd2_test_system_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="by.htp.jd2.test-system/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="by.htp.jd2.test-system" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="log4j-1.2.17" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.18" />
+          <element id="file-copy" path="C:/Tomcat/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="C:/Tomcat/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" />
+        </element>
+      </element>
+      <element id="directory" name="src">
+        <element id="dir-copy" path="$PROJECT_DIR$/src" />
+      </element>
+    </root>
+  </artifact>
+</component>
