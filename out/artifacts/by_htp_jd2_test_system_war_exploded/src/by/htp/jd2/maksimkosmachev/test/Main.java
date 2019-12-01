@@ -2,8 +2,10 @@ package by.htp.jd2.maksimkosmachev.test;
 
 import by.htp.jd2.maksimkosmachev.test.dao.SQLUserDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.ConnectionPoolException;
+import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserExistException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserNotExistException;
 import by.htp.jd2.maksimkosmachev.test.entity.User;
+import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -44,16 +46,24 @@ public class Main {
 
         try {
             SQLUserDAO sqlUserDAO = new SQLUserDAO();
-            User user = sqlUserDAO.signIn("Ivan", "123456");
+           // User user = sqlUserDAO.signIn("Ivan", "123456");
+            User user=new User();
+            user.setLogin("Vlad");
+            user.setPassword("77777");
+            user.setEmail("reaart@gmail.com");
+            user.setName("Vlad");
+            user.setSurname("Petrov");
+            user.setRole(Role.ADMINISTRATOR);
+            boolean status=sqlUserDAO.registration(user);
             System.out.println(user);
+            System.out.println(status);
         } catch (ConnectionPoolException e) {
             logger.info("Error in Connection pool");
         } catch (SQLException e) {
-            logger.info("Error in SQL");
-        } catch (SuchUserNotExistException e) {
-            logger.info("Such user not exist");
+            logger.info("Error in SQL" +e);
+        } catch (SuchUserExistException e) {
+            e.printStackTrace();
         }
-       logger.info("In logger");
 
     }
 

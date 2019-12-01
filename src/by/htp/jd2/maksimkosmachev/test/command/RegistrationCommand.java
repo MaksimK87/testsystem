@@ -24,20 +24,22 @@ public class RegistrationCommand implements Command {
         boolean isRegistration = false;
         User user = new User();
 
-        user.setName(req.getParameter("userName"));
-        user.setSurname(req.getParameter("userSurname"));
-        user.setEmail(req.getParameter("userEmail"));
-        user.setLogin(req.getParameter("userLogin"));
-        user.setPassword(req.getParameter("userPassword"));
-        user.setRole(Role.valueOf(req.getParameter("userRole")));
-        serviceFactory=serviceFactory.getInstance();
+        user.setName(req.getParameter("name"));
+        user.setSurname(req.getParameter("surname"));
+        user.setEmail(req.getParameter("email"));
+        user.setLogin(req.getParameter("login"));
+        user.setPassword(req.getParameter("password"));
+        user.setRole(Role.valueOf(req.getParameter("role")));
+        serviceFactory=ServiceFactory.getInstance();
         try {
             isRegistration=serviceFactory.getClientService().registration(user);
+            logger.info("User's registration is: "+isRegistration);
         } catch (ServiceException e) {
             logger.error("exception during registration "+e);
         }
 
         req.setAttribute("isRegistration",isRegistration);
         RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/successReg.jsp");
+        requestDispatcher.forward(req,resp);
     }
 }

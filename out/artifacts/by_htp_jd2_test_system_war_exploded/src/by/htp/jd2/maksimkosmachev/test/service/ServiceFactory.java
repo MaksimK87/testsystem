@@ -8,7 +8,7 @@ public class ServiceFactory {
     private ServiceFactory() {
     }
 
-    public ServiceFactory getInstance() {
+    public static ServiceFactory getInstance() {
 
         return instance;
     }

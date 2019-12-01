@@ -14,8 +14,18 @@
     </servlet>
 
     <servlet>
+        <servlet-name>Myprofile</servlet-name>
+        <jsp-file>/WEB-INF/jsp/Myprofile.jsp</jsp-file>
+    </servlet>
+
+    <servlet>
         <servlet-name>Registration</servlet-name>
         <jsp-file>/WEB-INF/jsp/Registration.jsp</jsp-file>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>successReg</servlet-name>
+        <jsp-file>/WEB-INF/jsp/successReg.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
@@ -27,6 +37,16 @@
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
         <url-pattern>/Registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Myprofile</servlet-name>
+        <url-pattern>/Myprofile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>successReg</servlet-name>
+        <url-pattern>/successReg</url-pattern>
     </servlet-mapping>
 
 

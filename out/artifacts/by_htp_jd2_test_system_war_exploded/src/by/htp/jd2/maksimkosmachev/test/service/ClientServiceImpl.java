@@ -3,6 +3,7 @@ package by.htp.jd2.maksimkosmachev.test.service;
 import by.htp.jd2.maksimkosmachev.test.dao.DAOFactory;
 import by.htp.jd2.maksimkosmachev.test.dao.UserDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.ConnectionPoolException;
+import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserExistException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserNotExistException;
 import by.htp.jd2.maksimkosmachev.test.entity.User;
 import by.htp.jd2.maksimkosmachev.test.service.exception.ServiceException;
@@ -42,7 +43,25 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public boolean registration(User user) throws ServiceException {
-        return false;
+        boolean isRegist=false;
+        if(user==null){
+            logger.error("User doesn't exist! Fill data for user!");
+            throw new ServiceException("User doesn't exist! Fill data for user!");
+        }
+        DAOFactory daoFactory=DAOFactory.getInstance();
+        UserDAO userDAO = daoFactory.getUserDAO();
+
+
+        try {
+            isRegist= userDAO.registration(user);
+        } catch (ConnectionPoolException e) {
+            logger.error("ConnectionPoolException "+e);
+        } catch (SQLException e) {
+            logger.error("SQL exception "+e);
+        } catch (SuchUserExistException e) {
+            logger.error("SuchUserExistException "+ e);
+        }
+        return isRegist;
     }
 
     @Override
