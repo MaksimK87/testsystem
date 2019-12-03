@@ -25,7 +25,11 @@
     <input type="text" name="email" value=""/>
     <br/>
     Choose role:
-    <input type="text" name="role" value=""/>
+    <select name="role" required>
+        <option value="STUDENT">Student</option>
+        <option value="TUTOR">Tutor</option>
+        <option value="ADMINISTRATOR">Administrator</option>
+    </select>
     <br/>
     Login:
     <input type="text" name="login" value=""/>

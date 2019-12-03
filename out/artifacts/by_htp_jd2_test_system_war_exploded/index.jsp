@@ -10,16 +10,19 @@
 <html>
 <head>
     <title>test system</title>
+    <style>
+        <%@include file="/WEB-INF/style/index.css"%>
+    </style>
 </head>
 <body>
-<form action="Controller" method="post">
+<form action="Controller" method="post" class="formRegistration">
     <input type="hidden" name="command" value="authorization"/>
-    Login:
+    <span>Login:</span>
     <input type="text" name="login" value=""/>
     <br/>
-    Password:
+    <span>Password:</span>
     <input type="password" name="password" value=""/>
-    <input type="submit" name="sign in" value="sign in"/>
+    <input type="submit" name="sign in" value="sign in" class="inputBtn"/>
 </form>
 
 <a href="Registration"> Go to registration page </a>

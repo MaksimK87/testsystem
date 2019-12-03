@@ -1,9 +1,11 @@
 package by.htp.jd2.maksimkosmachev.test;
 
+import by.htp.jd2.maksimkosmachev.test.dao.SQLTestDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.SQLUserDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.ConnectionPoolException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserExistException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserNotExistException;
+import by.htp.jd2.maksimkosmachev.test.entity.Test;
 import by.htp.jd2.maksimkosmachev.test.entity.User;
 import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 import org.apache.log4j.Logger;
@@ -45,7 +47,16 @@ public class Main {
 
 
         try {
-            SQLUserDAO sqlUserDAO = new SQLUserDAO();
+            SQLTestDAO sqlTestDAO=new SQLTestDAO();
+            Test test=new Test();
+            test.setTestName("Exceptions");
+            test.setTestDuration(30);
+            test.setQuestionText("Which class on the top of hierarchy of exceptions?");
+            test.setAnswer("Throwable");
+            test.setRightAnswer(true);
+            sqlTestDAO.addTest(test);
+
+           /* SQLUserDAO sqlUserDAO = new SQLUserDAO();
            // User user = sqlUserDAO.signIn("Ivan", "123456");
             User user=new User();
             user.setLogin("Vlad");
@@ -62,6 +73,10 @@ public class Main {
         } catch (SQLException e) {
             logger.info("Error in SQL" +e);
         } catch (SuchUserExistException e) {
+            e.printStackTrace();*/
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

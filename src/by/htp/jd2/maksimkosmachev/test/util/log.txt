@@ -221,3 +221,24 @@ java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
 	at by.htp.jd2.maksimkosmachev.test.dao.connectionpool.ConnectionPool.<clinit>(ConnectionPool.java:21)
 	at by.htp.jd2.maksimkosmachev.test.dao.SQLUserDAO.registration(SQLUserDAO.java:81)
 	at by.htp.jd2.maksimkosmachev.test.Main.main(Main.java:57)
+2019-12-03 17:13:23 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-03 17:13:23 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-03 17:13:23 INFO  ConnectionPool:92 - connection was taken
+2019-12-03 17:14:15 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-03 17:14:15 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-03 17:14:15 INFO  ConnectionPool:92 - connection was taken
+2019-12-03 17:14:15 INFO  ConnectionPool:124 - connection was closed
+2019-12-03 17:14:15 INFO  ConnectionPool:130 - statement was closed
+2019-12-03 17:14:42 DEBUG SQLTestDAO:19 - In method addTest
+2019-12-03 17:14:43 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-03 17:14:43 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-03 17:14:43 INFO  ConnectionPool:92 - connection was taken
+2019-12-03 17:14:43 DEBUG SQLTestDAO:31 - Execution ADD_NEW_TEST query was successful
+2019-12-03 17:14:43 DEBUG SQLTestDAO:35 - id was generated for test 4
+2019-12-03 17:14:43 DEBUG SQLTestDAO:42 - Inserting question text and test id in Test questions table completed!
+2019-12-03 17:14:43 DEBUG SQLTestDAO:46 - id_test_question was generated for test_questions 4
+2019-12-03 17:14:43 DEBUG SQLTestDAO:53 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-03 17:14:43 DEBUG SQLTestDAO:57 - id_test_answer was generated for test_answers 4
+2019-12-03 17:14:43 INFO  ConnectionPool:124 - connection was closed
+2019-12-03 17:14:43 INFO  ConnectionPool:130 - statement was closed
+2019-12-03 17:14:43 DEBUG SQLTestDAO:62 - closing connection from SQLTestDAO
