@@ -1,5 +1,6 @@
-package by.htp.jd2.maksimkosmachev.test.command;
+package by.htp.jd2.maksimkosmachev.test.command.impl;
 
+import by.htp.jd2.maksimkosmachev.test.command.Command;
 import by.htp.jd2.maksimkosmachev.test.entity.User;
 import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 import by.htp.jd2.maksimkosmachev.test.service.ServiceFactory;
@@ -11,8 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import static by.htp.jd2.maksimkosmachev.test.command.RequestParameter.*;
 
 public class RegistrationCommand implements Command {
 

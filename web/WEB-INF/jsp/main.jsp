@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<% User user = (User) request.getAttribute("user");
+<% User user = (User) session.getAttribute("user");
     out.println(user.getName());
     out.println(user.getSurname());
     out.println(user.getRole());

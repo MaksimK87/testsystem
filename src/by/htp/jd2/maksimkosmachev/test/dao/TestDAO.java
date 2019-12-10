@@ -14,6 +14,6 @@ public interface TestDAO {
 
     void getTest(String name);
 
-    List<Test> getAllTest();
+    List<Test> getAllTest() throws SQLException, ConnectionPoolException;
 
 }

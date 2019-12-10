@@ -5,7 +5,8 @@
   Time: 18:56
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,17 +16,6 @@
     </style>
 </head>
 <body>
-<form action="Controller" method="post" class="formRegistration">
-    <input type="hidden" name="command" value="authorization"/>
-    <span>Login:</span>
-    <input type="text" name="login" value=""/>
-    <br/>
-    <span>Password:</span>
-    <input type="password" name="password" value=""/>
-    <input type="submit" name="sign in" value="sign in" class="inputBtn"/>
-</form>
-
-<a href="Registration"> Go to registration page </a>
-
-    </body>
+<c:redirect url="Controller?command=go_to_sign_in_page"/>
+</body>
 </html>

@@ -1,16 +1,16 @@
-package by.htp.jd2.maksimkosmachev.test.command;
+package by.htp.jd2.maksimkosmachev.test.command.impl;
 
+import by.htp.jd2.maksimkosmachev.test.command.Command;
 import by.htp.jd2.maksimkosmachev.test.entity.User;
-import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 import by.htp.jd2.maksimkosmachev.test.service.ClientService;
 import by.htp.jd2.maksimkosmachev.test.service.ServiceFactory;
 import by.htp.jd2.maksimkosmachev.test.service.exception.ServiceException;
 import org.apache.log4j.Logger;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -37,10 +37,13 @@ public class AuthorizationCommand implements Command {
            logger.error("Exception during signing in "+e);
         }
 
-
-        req.setAttribute("user",user);
-        RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/Myprofile.jsp");
-        requestDispatcher.forward(req,resp);
+        System.out.println("Выполняю авторизацию");
+        HttpSession session=req.getSession(true);
+        session.setAttribute("user",user);
+        //req.setAttribute("user",user);
+        /*RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/Myprofile.jsp");
+        requestDispatcher.forward(req,resp);*/
+        resp.sendRedirect("Controller?command=go_to_main_page");
 
 
 

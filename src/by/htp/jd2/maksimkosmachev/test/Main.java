@@ -1,7 +1,9 @@
 package by.htp.jd2.maksimkosmachev.test;
 
+import by.htp.jd2.maksimkosmachev.test.dao.DAOFactory;
 import by.htp.jd2.maksimkosmachev.test.dao.SQLTestDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.SQLUserDAO;
+import by.htp.jd2.maksimkosmachev.test.dao.TestDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.ConnectionPoolException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserExistException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserNotExistException;
@@ -11,11 +13,18 @@ import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Main {
     private static final Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
+//        ResourceBundle resourceBundle=ResourceBundle.getBundle("by.htp.jd2.maksimkosmachev.test.resources.local",new Locale("by","by"));
+//        System.out.println(resourceBundle.getString("local.registration"));
+
        /* User user;
         String login="Ivan";
         String password="123456";
@@ -46,7 +55,7 @@ public class Main {
         }*/
 
 
-        try {
+      /*  try {
             SQLTestDAO sqlTestDAO=new SQLTestDAO();
             Test test=new Test();
             test.setTestName("Exceptions");
@@ -54,7 +63,7 @@ public class Main {
             test.setQuestionText("Which class on the top of hierarchy of exceptions?");
             test.setAnswer("Throwable");
             test.setRightAnswer(true);
-            sqlTestDAO.addTest(test);
+            sqlTestDAO.addTest(test);*/
 
            /* SQLUserDAO sqlUserDAO = new SQLUserDAO();
            // User user = sqlUserDAO.signIn("Ivan", "123456");
@@ -74,12 +83,27 @@ public class Main {
             logger.info("Error in SQL" +e);
         } catch (SuchUserExistException e) {
             e.printStackTrace();*/
-        } catch (ConnectionPoolException e) {
+
+
+
+      /*  } catch (ConnectionPoolException e) {
             e.printStackTrace();
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+*/
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        TestDAO testDAO = daoFactory.getTestDAO();
+        List<Test> tests;
+        try {
+            tests = testDAO.getAllTest();
+            System.out.println(tests.toString());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ConnectionPoolException e) {
             e.printStackTrace();
         }
 
     }
 
-    }
+}

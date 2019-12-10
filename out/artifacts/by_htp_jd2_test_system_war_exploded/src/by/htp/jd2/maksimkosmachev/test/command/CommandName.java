@@ -1,5 +1,5 @@
 package by.htp.jd2.maksimkosmachev.test.command;
 
 public enum CommandName {
-        AUTHORIZATION, REGISTRATION
+        AUTHORIZATION, REGISTRATION, GO_TO_SIGN_IN_PAGE, GO_TO_MAIN_PAGE
 }

@@ -6,6 +6,7 @@ import by.htp.jd2.maksimkosmachev.test.entity.Test;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static by.htp.jd2.maksimkosmachev.test.dao.SQLrequest.*;
@@ -59,7 +60,7 @@ public class SQLTestDAO implements TestDAO {
         } finally {
             connection.setAutoCommit(true);
             connectionPool.closeConnection(connection, preparedStatement);
-            logger.debug("closing connection from SQLTestDAO");
+            logger.debug("closing connection from SQLTestDAO (method - addTest)");
         }
 
     }
@@ -74,8 +75,35 @@ public class SQLTestDAO implements TestDAO {
 
     }
 
-    public List<Test> getAllTest() {
-        return null;
+    public List<Test> getAllTest() throws SQLException, ConnectionPoolException {
+        logger.debug("In get all test method");
+        List<Test> tests = new ArrayList<>();
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet;
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        Connection connection = connectionPool.takeConnection();
+
+        try {
+
+            preparedStatement = connection.prepareStatement(SHOW_ALL_TESTS);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                logger.debug("result set is processing");
+                Test test = new Test();
+                test.setTestName(resultSet.getString(2));
+                test.setTestDuration(resultSet.getInt(3));
+                logger.debug("Test from DB: " + test.getTestName() + " duration: " + test.getTestDuration());
+                tests.add(test);
+            }
+        } finally {
+            connectionPool.closeConnection(connection, preparedStatement);
+            logger.debug("closing connection from SQLTestDAO (method - getAllTest)");
+        }
+
+
+        return tests;
     }
 
 }

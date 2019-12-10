@@ -1,5 +1,7 @@
 package by.htp.jd2.maksimkosmachev.test.command;
 
+import by.htp.jd2.maksimkosmachev.test.command.impl.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +11,9 @@ final public class CommandProvider {
     public CommandProvider() {
         commands.put(CommandName.AUTHORIZATION, new AuthorizationCommand());
         commands.put(CommandName.REGISTRATION,new RegistrationCommand());
+        commands.put(CommandName.GO_TO_SIGN_IN_PAGE,new GoToSignInPage());
+        commands.put(CommandName.GO_TO_MAIN_PAGE,new GoToMainPage());
+        commands.put(CommandName.GO_TO_REGISTRATION_PAGE,new GoToRegistrationPage());
     }
 
     public Command getCommand(String name) {
