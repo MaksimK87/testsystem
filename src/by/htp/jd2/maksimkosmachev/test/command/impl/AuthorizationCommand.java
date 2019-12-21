@@ -18,34 +18,39 @@ import static by.htp.jd2.maksimkosmachev.test.command.RequestParameter.*;
 
 public class AuthorizationCommand implements Command {
 
-    private static final Logger logger=Logger.getLogger(AuthorizationCommand.class);
+    private static final Logger logger = Logger.getLogger(AuthorizationCommand.class);
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServiceFactory serviceFactory=null;
-        ClientService clientService=null;
-        User user=null;
+        ServiceFactory serviceFactory = null;
+        ClientService clientService = null;
+        User user = null;
+        HttpSession session;
+
 
         String login = req.getParameter(LOGIN_PARAM_FROM_LOGIN_PAGE);
         String password = req.getParameter(PASSWORD_PARAM_FROM_LOGIN_PAGE);
-        serviceFactory=ServiceFactory.getInstance();
-        clientService=serviceFactory.getClientService();
+        serviceFactory = ServiceFactory.getInstance();
+        clientService = serviceFactory.getClientService();
         try {
-            user=clientService.signIn(login,password);
-            logger.info("get user from DB: "+user);
+            user = clientService.signIn(login, password);
+            if (user == null) {
+                resp.sendRedirect("Controller?command=go_to_sign_in_page&errorMessage=Incorrect login or password! ");
+                return;
+            }
+            session = req.getSession(true);
+            session.setAttribute("user", user);
+            logger.info("get user from DB: " + user);
+
         } catch (ServiceException e) {
-           logger.error("Exception during signing in "+e);
+            logger.error("Exception during signing in " + e);
+            resp.sendRedirect("error.jsp");
+            return;
         }
 
         System.out.println("Выполняю авторизацию");
-        HttpSession session=req.getSession(true);
-        session.setAttribute("user",user);
-        //req.setAttribute("user",user);
-        /*RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/Myprofile.jsp");
-        requestDispatcher.forward(req,resp);*/
+
         resp.sendRedirect("Controller?command=go_to_main_page");
-
-
 
 
     }

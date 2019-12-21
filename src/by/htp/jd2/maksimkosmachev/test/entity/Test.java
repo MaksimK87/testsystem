@@ -1,5 +1,9 @@
 package by.htp.jd2.maksimkosmachev.test.entity;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Test extends Entity {
@@ -7,19 +11,21 @@ public class Test extends Entity {
     private int testDuration;
     private String questionText;
     private String answer;
-    private boolean isRightAnswer;
+    private Map<String,Boolean> answers=new HashMap<>();
+    private Map<String, Map<String,Boolean>> test=new HashMap<>();
+    private boolean RightAnswer;
     private int idTestQuestion;
     private int idTestAnswer;
 
     public Test() {
     }
 
-    public Test(String testName, int testDuration, String questionText, String answer, boolean isRightAnswer) {
+    public Test(String testName, int testDuration, String questionText, String answer, boolean RightAnswer) {
         this.testName = testName;
         this.testDuration = testDuration;
         this.questionText = questionText;
         this.answer = answer;
-        this.isRightAnswer = isRightAnswer;
+        this.RightAnswer = RightAnswer;
     }
 
     public String getTestName() {
@@ -55,11 +61,11 @@ public class Test extends Entity {
     }
 
     public boolean isRightAnswer() {
-        return isRightAnswer;
+        return RightAnswer;
     }
 
     public void setRightAnswer(boolean rightAnswer) {
-        isRightAnswer = rightAnswer;
+        RightAnswer = rightAnswer;
     }
 
     public int getIdTestQuestion() {
@@ -78,6 +84,22 @@ public class Test extends Entity {
         this.idTestAnswer = idTestAnswer;
     }
 
+    public Map<String, Boolean> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Map<String, Boolean> answers) {
+        this.answers = answers;
+    }
+
+    public Map<String, Map<String, Boolean>> getTest() {
+        return test;
+    }
+
+    public void setTest(Map<String, Map<String, Boolean>> test) {
+        this.test = test;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,7 +107,7 @@ public class Test extends Entity {
         if (!super.equals(o)) return false;
         Test test = (Test) o;
         return testDuration == test.testDuration &&
-                isRightAnswer == test.isRightAnswer &&
+                RightAnswer == test.RightAnswer &&
                 idTestQuestion == test.idTestQuestion &&
                 idTestAnswer == test.idTestAnswer &&
                 testName.equals(test.testName) &&
@@ -95,7 +117,7 @@ public class Test extends Entity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), testName, testDuration, questionText, answer, isRightAnswer, idTestQuestion, idTestAnswer);
+        return Objects.hash(super.hashCode(), testName, testDuration, questionText, answer, RightAnswer, idTestQuestion, idTestAnswer);
     }
 
     @Override
@@ -105,7 +127,7 @@ public class Test extends Entity {
                 ", testDuration=" + testDuration +
                 ", questionText='" + questionText + '\'' +
                 ", answer='" + answer + '\'' +
-                ", isRightAnswer=" + isRightAnswer +
+                ", RightAnswer=" + RightAnswer +
                 ", idTestQuestion=" + idTestQuestion +
                 ", idTestAnswer=" + idTestAnswer +
                 '}';

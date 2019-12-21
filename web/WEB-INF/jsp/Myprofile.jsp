@@ -13,6 +13,8 @@
     <title>My profile</title>
 </head>
 <body>
+
+
  <%
    User user=(User) request.getAttribute("user");
    out.println(user.getName());

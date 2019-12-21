@@ -272,3 +272,151 @@ java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
 2019-12-09 21:52:23 INFO  ConnectionPool:124 - connection was closed
 2019-12-09 21:52:23 INFO  ConnectionPool:130 - statement was closed
 2019-12-09 21:52:23 DEBUG SQLTestDAO:102 - closing connection from SQLTestDAO (method - getAllTest)
+2019-12-18 14:19:03 DEBUG SQLTestDAO:21 - In method addTest
+2019-12-18 14:19:04 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 14:19:04 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 14:19:04 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 14:19:04 DEBUG SQLTestDAO:33 - Execution ADD_NEW_TEST query was successful
+2019-12-18 14:19:04 DEBUG SQLTestDAO:37 - id was generated for test 5
+2019-12-18 14:19:04 DEBUG SQLTestDAO:45 - Inserting question text and test id in Test questions table completed! Question
+2019-12-18 14:19:04 DEBUG SQLTestDAO:49 - id_test_question was generated for test_questions 5
+2019-12-18 14:19:04 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 14:19:04 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 14:19:04 DEBUG SQLTestDAO:69 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 14:25:30 DEBUG SQLTestDAO:21 - In method addTest
+2019-12-18 14:25:30 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 14:25:30 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 14:25:30 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 14:25:30 DEBUG SQLTestDAO:33 - Execution ADD_NEW_TEST query was successful
+2019-12-18 14:25:30 DEBUG SQLTestDAO:37 - id was generated for test 6
+2019-12-18 14:25:30 DEBUG SQLTestDAO:45 - Inserting question text and test id in Test questions table completed! Question
+2019-12-18 14:25:30 DEBUG SQLTestDAO:49 - id_test_question was generated for test_questions 6
+2019-12-18 14:25:30 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 14:25:30 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 14:25:30 DEBUG SQLTestDAO:70 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 14:37:26 DEBUG SQLTestDAO:21 - In method addTest
+2019-12-18 14:37:26 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 14:37:26 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 14:37:26 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 14:37:26 DEBUG SQLTestDAO:33 - Execution ADD_NEW_TEST query was successful
+2019-12-18 14:37:26 DEBUG SQLTestDAO:37 - id was generated for test 7
+2019-12-18 14:37:26 DEBUG SQLTestDAO:45 - Inserting question text and test id in Test questions table completed! Question2
+2019-12-18 14:37:26 DEBUG SQLTestDAO:49 - id_test_question was generated for test_questions 7
+2019-12-18 14:37:26 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 14:37:27 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 14:37:27 DEBUG SQLTestDAO:70 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 14:42:13 DEBUG SQLTestDAO:21 - In method addTest
+2019-12-18 14:42:14 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 14:42:14 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 14:42:14 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 14:42:14 DEBUG SQLTestDAO:33 - Execution ADD_NEW_TEST query was successful
+2019-12-18 14:42:14 DEBUG SQLTestDAO:37 - id was generated for test 8
+2019-12-18 14:42:14 DEBUG SQLTestDAO:45 - Inserting question text and test id in Test questions table completed! Question2
+2019-12-18 14:42:14 DEBUG SQLTestDAO:49 - id_test_question was generated for test_questions 8
+2019-12-18 14:42:14 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 14:42:14 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 14:42:14 DEBUG SQLTestDAO:70 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 14:45:20 DEBUG SQLTestDAO:21 - In method addTest
+2019-12-18 14:45:20 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 14:45:20 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 14:45:20 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 14:45:20 DEBUG SQLTestDAO:33 - Execution ADD_NEW_TEST query was successful
+2019-12-18 14:45:20 DEBUG SQLTestDAO:37 - id was generated for test 9
+2019-12-18 14:45:20 DEBUG SQLTestDAO:45 - Inserting question text and test id in Test questions table completed! Question2
+2019-12-18 14:45:20 DEBUG SQLTestDAO:49 - id_test_question was generated for test_questions 9
+2019-12-18 14:45:20 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 14:45:20 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 14:45:20 DEBUG SQLTestDAO:70 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 14:52:56 DEBUG SQLTestDAO:22 - In method addTest
+2019-12-18 14:52:57 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 14:52:57 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 14:52:57 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 14:52:57 DEBUG SQLTestDAO:34 - Execution ADD_NEW_TEST query was successful
+2019-12-18 14:52:57 DEBUG SQLTestDAO:38 - id was generated for test 10
+2019-12-18 14:52:57 DEBUG SQLTestDAO:46 - Inserting question text and test id in Test questions table completed! Question2
+2019-12-18 14:52:57 DEBUG SQLTestDAO:50 - id_test_question was generated for test_questions 10
+2019-12-18 14:52:57 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 3=false
+2019-12-18 14:52:57 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 14:52:57 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 5
+2019-12-18 14:52:57 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 2=false
+2019-12-18 14:52:57 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 14:52:57 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 6
+2019-12-18 14:52:57 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 1=true
+2019-12-18 14:52:57 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 14:52:57 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 7
+2019-12-18 14:52:57 DEBUG SQLTestDAO:46 - Inserting question text and test id in Test questions table completed! Question1
+2019-12-18 14:52:57 DEBUG SQLTestDAO:50 - id_test_question was generated for test_questions 11
+2019-12-18 14:52:57 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 3=false
+2019-12-18 14:52:57 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 14:52:57 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 8
+2019-12-18 14:52:57 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 2=false
+2019-12-18 14:52:57 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 14:52:57 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 9
+2019-12-18 14:52:57 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 1=true
+2019-12-18 14:52:57 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 14:52:57 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 10
+2019-12-18 14:52:57 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 14:52:57 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 14:52:57 DEBUG SQLTestDAO:73 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 15:43:45 DEBUG SQLTestDAO:22 - In method addTest
+2019-12-18 15:43:45 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 15:43:45 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 15:43:45 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 15:43:46 DEBUG SQLTestDAO:34 - Execution ADD_NEW_TEST query was successful
+2019-12-18 15:43:46 DEBUG SQLTestDAO:38 - id was generated for test 11
+2019-12-18 15:43:46 DEBUG SQLTestDAO:46 - Inserting question text and test id in Test questions table completed! Question 4-6
+2019-12-18 15:43:46 DEBUG SQLTestDAO:50 - id_test_question was generated for test_questions 12
+2019-12-18 15:43:46 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 5=false
+2019-12-18 15:43:46 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 15:43:46 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 11
+2019-12-18 15:43:46 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 4=true
+2019-12-18 15:43:46 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 15:43:46 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 12
+2019-12-18 15:43:46 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 6=false
+2019-12-18 15:43:46 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 15:43:46 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 13
+2019-12-18 15:43:46 DEBUG SQLTestDAO:46 - Inserting question text and test id in Test questions table completed! Question 1-3
+2019-12-18 15:43:46 DEBUG SQLTestDAO:50 - id_test_question was generated for test_questions 13
+2019-12-18 15:43:46 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 3=false
+2019-12-18 15:43:46 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 15:43:46 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 14
+2019-12-18 15:43:46 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 2=false
+2019-12-18 15:43:46 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 15:43:46 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 15
+2019-12-18 15:43:46 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 1=true
+2019-12-18 15:43:46 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 15:43:46 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 16
+2019-12-18 15:43:46 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 15:43:46 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 15:43:46 DEBUG SQLTestDAO:73 - closing connection from SQLTestDAO (method - addTest)
+2019-12-18 21:39:07 DEBUG SQLTestDAO:22 - In method addTest
+2019-12-18 21:39:09 INFO  ConnectionPool:68 - Init pool data in constructor 
+2019-12-18 21:39:09 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2019-12-18 21:39:09 INFO  ConnectionPool:92 - connection was taken
+2019-12-18 21:39:09 DEBUG SQLTestDAO:34 - Execution ADD_NEW_TEST query was successful
+2019-12-18 21:39:09 DEBUG SQLTestDAO:38 - id was generated for test 12
+2019-12-18 21:39:09 DEBUG SQLTestDAO:46 - Inserting question text and test id in Test questions table completed! Question 41-61
+2019-12-18 21:39:09 DEBUG SQLTestDAO:50 - id_test_question was generated for test_questions 14
+2019-12-18 21:39:09 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 51=false
+2019-12-18 21:39:09 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 21:39:09 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 17
+2019-12-18 21:39:09 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 41=true
+2019-12-18 21:39:09 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 21:39:09 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 18
+2019-12-18 21:39:09 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 61=false
+2019-12-18 21:39:09 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 21:39:09 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 19
+2019-12-18 21:39:09 DEBUG SQLTestDAO:46 - Inserting question text and test id in Test questions table completed! Question 11-31
+2019-12-18 21:39:09 DEBUG SQLTestDAO:50 - id_test_question was generated for test_questions 15
+2019-12-18 21:39:09 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 11=true
+2019-12-18 21:39:09 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 21:39:09 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 20
+2019-12-18 21:39:09 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 31=false
+2019-12-18 21:39:09 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 21:39:09 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 21
+2019-12-18 21:39:09 DEBUG SQLTestDAO:56 -  subEntry for DB Answer 21=false
+2019-12-18 21:39:09 DEBUG SQLTestDAO:61 - Inserting answer text, isRight and id_test_question in Test answers table completed!
+2019-12-18 21:39:09 DEBUG SQLTestDAO:65 - id_test_answer was generated for test_answers 22
+2019-12-18 21:39:09 INFO  ConnectionPool:124 - connection was closed
+2019-12-18 21:39:09 INFO  ConnectionPool:130 - statement was closed
+2019-12-18 21:39:09 DEBUG SQLTestDAO:73 - closing connection from SQLTestDAO (method - addTest)

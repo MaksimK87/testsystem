@@ -14,15 +14,15 @@
 <body>
 <form action="Controller" method="post">
 
-    <input type="hidden" name="command" value="registration"/>
+    <input type="hidden" name="command" value="registration" required/>
     Name:
-    <input type="text" name="name" value=""/>
+    <input type="text" name="name" value="" required/>
     <br/>
     Surname:
-    <input type="text" name="surname" value=""/>
+    <input type="text" name="surname" value="" required/>
     <br/>
     email:
-    <input type="text" name="email" value=""/>
+    <input type="email" name="email" value="" required/>
     <br/>
     Choose role:
     <select name="role" required>
@@ -32,10 +32,10 @@
     </select>
     <br/>
     Login:
-    <input type="text" name="login" value=""/>
+    <input type="text" name="login" value="" required />
     <br/>
     Password:
-    <input type="text" name="password" value=""/>
+    <input type="password" name="password" value="" required/>
 
     <input type="submit" name="sign up" value="sign up"/>
 </form>

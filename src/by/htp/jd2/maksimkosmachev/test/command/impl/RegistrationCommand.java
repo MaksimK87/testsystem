@@ -11,11 +11,12 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class RegistrationCommand implements Command {
 
-    private static final Logger logger=Logger.getLogger(RegistrationCommand.class);
+    private static final Logger logger = Logger.getLogger(RegistrationCommand.class);
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,16 +30,20 @@ public class RegistrationCommand implements Command {
         user.setLogin(req.getParameter("login"));
         user.setPassword(req.getParameter("password"));
         user.setRole(Role.valueOf(req.getParameter("role")));
-        serviceFactory=ServiceFactory.getInstance();
+        serviceFactory = ServiceFactory.getInstance();
         try {
-            isRegistration=serviceFactory.getClientService().registration(user);
-            logger.info("User's registration is: "+isRegistration);
+            isRegistration = serviceFactory.getClientService().registration(user);
+            logger.info("User's registration is: " + isRegistration);
         } catch (ServiceException e) {
-            logger.error("exception during registration "+e);
+            logger.error("exception during registration " + e);
         }
-
-        req.setAttribute("isRegistration",isRegistration);
-        RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/successReg.jsp");
-        requestDispatcher.forward(req,resp);
+        HttpSession session = req.getSession(true);
+        if (isRegistration) {
+            session.setAttribute("user", user);
+            resp.sendRedirect("Controller?command=go_to_main_page");
+        }
+       /* req.setAttribute("isRegistration", isRegistration);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/successReg.jsp");
+        requestDispatcher.forward(req, resp);*/
     }
 }

@@ -9,16 +9,23 @@
          pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Main</title>
 </head>
 <body>
 
-<% User user = (User) session.getAttribute("user");
+<% User user = (User) session.getAttribute("user");%>
+<br/> <%
     out.println(user.getName());
     out.println(user.getSurname());
     out.println(user.getRole());
 
 %>
+
+<form action="Controller" method="post">
+    <input type="hidden" name="command" value="go_to_add_test_page"/>
+    <input type="submit" value="Add new test"/>
+</form>
+
 
 </body>
 </html>

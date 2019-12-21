@@ -7,21 +7,62 @@ import by.htp.jd2.maksimkosmachev.test.dao.TestDAO;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.ConnectionPoolException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserExistException;
 import by.htp.jd2.maksimkosmachev.test.dao.exception.SuchUserNotExistException;
+import by.htp.jd2.maksimkosmachev.test.entity.Entity;
 import by.htp.jd2.maksimkosmachev.test.entity.Test;
 import by.htp.jd2.maksimkosmachev.test.entity.User;
 import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 import org.apache.log4j.Logger;
 
+import java.io.Serializable;
 import java.sql.*;
+import java.util.*;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class Main {
     private static final Logger logger = Logger.getLogger(Main.class);
 
+
     public static void main(String[] args) {
+
+        SQLTestDAO sqlTestDAO = new SQLTestDAO();
+        Test test = new Test();
+        test.setTestName("Threads");
+        test.setTestDuration(30);
+        HashMap<String, Boolean> answers = new HashMap<>();
+        HashMap<String, Boolean> answers1 = new HashMap<>();
+        answers.put("Answer 11",true);
+        answers.put("Answer 21",false);
+        answers.put("Answer 31",false);
+        answers1.put("Answer 41",true);
+        answers1.put("Answer 51",false);
+        answers1.put("Answer 61",false);
+
+        System.out.println(answers.get("Answer 1"));
+
+        test.getTest().put("Question 11-31",answers );
+        test.getTest().put("Question 41-61",answers1);
+
+
+        /*for(Map.Entry entry:test.getTest().entrySet()){
+            HashMap<String,Boolean> hashMap=( HashMap<String,Boolean>)entry.getValue();
+                for(Map.Entry entry1:hashMap.entrySet())
+            System.out.println(entry1);
+           *//* for(Map.Entry entry1:test.getTest().get(entry).entrySet()){
+                System.out.println(entry1);
+            }*//*
+        }*/
+
+
+
+
+        try {
+            sqlTestDAO.addTest(test);
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 //        ResourceBundle resourceBundle=ResourceBundle.getBundle("by.htp.jd2.maksimkosmachev.test.resources.local",new Locale("by","by"));
 //        System.out.println(resourceBundle.getString("local.registration"));
 
@@ -92,7 +133,7 @@ public class Main {
             e.printStackTrace();
         }
 */
-        DAOFactory daoFactory = DAOFactory.getInstance();
+     /*   DAOFactory daoFactory = DAOFactory.getInstance();
         TestDAO testDAO = daoFactory.getTestDAO();
         List<Test> tests;
         try {
@@ -103,7 +144,12 @@ public class Main {
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
         }
+*/
+    }
 
+    public void method(int x) {
+        System.out.println("meth x " + x++);
+        ;
     }
 
 }

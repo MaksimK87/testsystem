@@ -15,15 +15,18 @@
 <br>
 <form action="Controller" method="post" class="formRegistration">
     <input type="hidden" name="command" value="authorization"/>
-    <span>Login:</span>
-    <input type="text" name="login" value=""/>
-    <br/>
-    <span>Password:</span>
-    <input type="password" name="password" value=""/>
-    <input type="submit" name="sign in" value="sign in" class="inputBtn"/>
+    <p>
+        <span>Login:</span>
+        <input type="text" name="login" value="" placeholder="enter login" autofocus required/>
+    </p>
+    <p>
+        <span>Password:</span>
+        <input type="password" name="password" value="" placeholder="enter password" required/>
+        <input type="submit" name="sign in" value="sign in" class="inputBtn"/>
+    </p>
 </form>
 <c:if test="${not empty param.errorMessage}">
-<c:out value="${param.errorMessage}"></c:out>
+    <c:out value="${param.errorMessage}"></c:out>
 </c:if>
 
 </br>
@@ -36,9 +39,14 @@
 <%
     List<Test> testList = (List<Test>) request.getAttribute("tests");
     for (Test test : testList) {
-        out.println("Name: " + test.getTestName() + " duration " + test.getTestDuration() + " min.");
-        out.println();
+        out.println("Name: " + test.getTestName() + " duration " + test.getTestDuration() + " min.");%>
+        <br/>
+  <%      out.println();
     }
 %>
+<c:forEach var="test" items="${tests}" >
+    <p><c:out value="${test.testName}"/></p>
+    </c:forEach>
+
 </body>
 </html>

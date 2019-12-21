@@ -31,6 +31,7 @@ public class Controller extends HttpServlet {
 
         command = provider.getCommand(commandName);
         command.execute(req, resp);
+
     }
 
     @Override

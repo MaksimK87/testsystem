@@ -10,7 +10,7 @@ public interface TestDAO {
 
     void addTest(Test test) throws ConnectionPoolException, SQLException;
 
-    void editTest(Test test);
+    void editTest(Test test) throws ConnectionPoolException;
 
     void getTest(String name);
 
