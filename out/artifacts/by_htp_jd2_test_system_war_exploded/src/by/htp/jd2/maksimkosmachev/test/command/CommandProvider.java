@@ -15,7 +15,7 @@ final public class CommandProvider {
         commands.put(CommandName.GO_TO_MAIN_PAGE,new GoToMainPage());
         commands.put(CommandName.GO_TO_REGISTRATION_PAGE,new GoToRegistrationPage());
         commands.put(CommandName.GO_TO_ADD_TEST_PAGE, new GoToAddTestPage());
-        commands.put(CommandName.ADD_TEST_QUESTION,new AddTestQuestion());
+        commands.put(CommandName.ADD_TEST,new AddTest());
     }
 
     public Command getCommand(String name) {

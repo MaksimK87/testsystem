@@ -11,21 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class AddTestQuestion implements Command {
-    private static final Logger logger = Logger.getLogger(AddTestQuestion.class);
+public class AddTest implements Command {
+    private static final Logger logger = Logger.getLogger(AddTest.class);
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Test test = new Test();
-        System.out.println(req.getAttributeNames().nextElement());
-        int answerQuantity;
-        test.setTestName((String) req.getAttribute("testName"));
-        test.setTestDuration((Integer) req.getAttribute("duration"));
-        test.setQuestionText((String) req.getAttribute("questionText"));
-        answerQuantity = (int) req.getAttribute("answerQuantity");
+        int questionQuantity;
+        HttpSession session;
+        test.setTestName(req.getParameter("testName"));
+        test.setTestDuration(Integer.parseInt(req.getParameter("duration")));
+        questionQuantity = Integer.parseInt(req.getParameter("questionQuantity"));
         logger.debug("Get parameters about test:" +test.getTestName()+" "+test.getTestDuration()+" "+
-                test.getQuestionText()+ " answers : "+answerQuantity);
-        RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/addAnswer.jsp");
+                " answers : "+questionQuantity);
+        session=req.getSession(false);
+        session.setAttribute("test",test);
+        session.setAttribute("questionQuantity",questionQuantity);
+
+        RequestDispatcher requestDispatcher=req.getRequestDispatcher("/WEB-INF/jsp/addQuestion.jsp");
         requestDispatcher.forward(req,resp);
 
     }

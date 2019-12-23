@@ -9,23 +9,24 @@
 <html>
 <head>
     <title>Creating new test</title>
-    <p>Create new test</p>
+    <p>Please, create new test:</p>
+
     <form action="Controller" method="post">
-        <input type="hidden" name="command" value="add_test_question"/>
+
+        <input type="hidden" name="command" value="add_test"/>
+
         Enter test's name:
         <p><input type="text" name="testName" value="" placeholder="enter name" required/>
         <p/>
+
         Enter test's duration (minutes):
         <p><input type="number" name="duration" min="0" value="" placeholder="enter duration in minutes" required/>
         </p>
-        Enter answer quantity:
-        <p><input type="number" name="answerQuantity" min="2" value="" placeholder="answer quantity" required></p>
-        Enter question:
-        <p>
-            <textarea name="questionText" cols="40" rows="3" placeholder="enter question" required></textarea>
 
-        <p>
-            <input type="submit" value="next">
+        Enter questions quantity in test:
+        <p><input type="number" name="questionQuantity" min="1" value="" placeholder="question quantity" required></p>
+
+        <input type="submit" value="next">
         </p>
 
 
