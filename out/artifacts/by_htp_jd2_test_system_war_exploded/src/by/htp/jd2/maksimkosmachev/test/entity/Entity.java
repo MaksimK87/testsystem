@@ -1,8 +1,9 @@
 package by.htp.jd2.maksimkosmachev.test.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Entity {
+public class Entity implements Serializable {
     private int id;
 
    public  Entity() {

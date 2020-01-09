@@ -12,6 +12,14 @@ public class SQLrequest {
     public static final String ADD_TEST_QUESTION="INSERT INTO test_questions(question_text,test_id)VALUES(?,?)";
     public static final String ADD_TEST_ANSWER="INSERT INTO test_answers(answers,isRight,test_questions_id) VALUES (?,?,?)";
     public static final String SHOW_ALL_TESTS="SELECT * FROM tests";
+    public static final String ADD_TEST_NAME_AND_DURATION="INSERT INTO tests(test_name,duration_time) VALUES (?,?)";
+    public static final String GET_TEST_BY_NAME="SELECT * FROM jd2_test_system.tests;\n" +
+            "SELECT * \n" +
+            "FROM (test_questions\n" +
+            "INNER JOIN tests\n" +
+            "ON test_id = id_test)\n" +
+            "INNER JOIN test_answers\n" +
+            "ON id_test_questions = test_questions_id";
 
 
 }

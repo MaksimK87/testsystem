@@ -39,7 +39,11 @@ public class AuthorizationCommand implements Command {
                 return;
             }
             session = req.getSession(true);
+
             session.setAttribute("user", user);
+
+            session.setAttribute("goto_req","Controller?command=go_to_main_page");
+
             logger.info("get user from DB: " + user);
 
         } catch (ServiceException e) {

@@ -13,14 +13,10 @@
         <servlet-class>by.htp.jd2.maksimkosmachev.test.controller.Controller</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>Myprofile</servlet-name>
-        <jsp-file>/WEB-INF/jsp/Myprofile.jsp</jsp-file>
-    </servlet>
 
     <servlet>
-        <servlet-name>Registration</servlet-name>
-        <jsp-file>/WEB-INF/jsp/Registration.jsp</jsp-file>
+        <servlet-name>registration</servlet-name>
+        <jsp-file>/WEB-INF/jsp/registration.jsp</jsp-file>
     </servlet>
     
     <servlet>
@@ -35,14 +31,10 @@
 
 
     <servlet-mapping>
-        <servlet-name>Registration</servlet-name>
-        <url-pattern>/Registration</url-pattern>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>Myprofile</servlet-name>
-        <url-pattern>/Myprofile</url-pattern>
-    </servlet-mapping>
     
     <servlet-mapping>
         <servlet-name>successReg</servlet-name>

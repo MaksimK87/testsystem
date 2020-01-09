@@ -7,19 +7,26 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import java.io.IOException;
 
-public class GoToAddTestPage implements Command {
+public class ChangeLanguage implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session=req.getSession(false);
-        if(session==null){
-            resp.sendRedirect("Controller?command=go_to_sign_in_page&errorMessage=session invalidate!");
-            return;
+        String local;
+        String goToReq;
+        HttpSession session = req.getSession(true);
+
+        local = req.getParameter("lang");
+
+        session.setAttribute("local", local);
+        goToReq = (String) session.getAttribute("goto_req");
+
+        if (goToReq.endsWith(".jsp")) {
+            req.getRequestDispatcher(goToReq).forward(req, resp);
+        } else {
+            resp.sendRedirect(goToReq);
         }
-        session.setAttribute("goto_req","/WEB-INF/jsp/addTest.jsp");
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/addTest.jsp");
-        requestDispatcher.forward(req, resp);
+
+
     }
 }

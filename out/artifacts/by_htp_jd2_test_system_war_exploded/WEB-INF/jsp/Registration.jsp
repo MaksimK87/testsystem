@@ -1,17 +1,32 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Maksim
-  Date: 21.11.2019
-  Time: 16:27
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Registration page</title>
+
+    <fmt:setLocale value="${sessionScope.local}"/>
+    <fmt:setBundle basename="resources.local" var="loc"/>
+
+    <fmt:message bundle="${loc}" key="local.signin.lang_button_ru" var="ru_button"/>
+    <fmt:message bundle="${loc}" key="local.signin.lang_button_en" var="en_button"/>
 </head>
 <body>
+
+<form action="Controller" method="post">
+    <input type="hidden" name="command" value="change_language"/>
+    <input type="hidden" name="lang" value="ru"/>
+    <input type="submit" value="${ru_button}"/>
+</form>
+
+<form action="Controller" method="post">
+    <input type="hidden" name="command" value="change_language"/>
+    <input type="hidden" name="lang" value="en"/>
+    <input type="submit" value="${en_button}"/>
+</form>
+
+
 <form action="Controller" method="post">
 
     <input type="hidden" name="command" value="registration" required/>
@@ -32,7 +47,7 @@
     </select>
     <br/>
     Login:
-    <input type="text" name="login" value="" required />
+    <input type="text" name="login" value="" required/>
     <br/>
     Password:
     <input type="password" name="password" value="" required/>

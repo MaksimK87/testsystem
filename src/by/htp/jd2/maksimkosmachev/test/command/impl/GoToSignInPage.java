@@ -10,6 +10,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -20,13 +21,16 @@ public class GoToSignInPage implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServiceFactory serviceFactory;
+        HttpSession session = req.getSession(true);
         List<Test> tests = null;
+        
         serviceFactory = ServiceFactory.getInstance();
         try {
             tests = serviceFactory.getTestService().getAllTest();
         } catch (ServiceException e) {
             logger.error("ServiceException" + e);
         }
+        session.setAttribute("goto_req","/WEB-INF/jsp/signIn.jsp");
         req.setAttribute("tests", tests);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/signIn.jsp");
         requestDispatcher.forward(req, resp);

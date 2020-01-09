@@ -19,7 +19,7 @@ public class RegistrationCommand implements Command {
     private static final Logger logger = Logger.getLogger(RegistrationCommand.class);
 
     @Override
-    public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ServiceFactory serviceFactory = null;
         boolean isRegistration = false;
         User user = new User();

@@ -10,10 +10,15 @@ public interface TestDAO {
 
     void addTest(Test test) throws ConnectionPoolException, SQLException;
 
+    int addTest(String name, int duration) throws ConnectionPoolException, SQLException;
+
     void editTest(Test test) throws ConnectionPoolException;
 
     void getTest(String name);
 
     List<Test> getAllTest() throws SQLException, ConnectionPoolException;
 
+    int addTestQuestion(String question, int testId) throws ConnectionPoolException, SQLException;
+
+    void addAnswer(String answer, boolean isRight, int questionId) throws ConnectionPoolException, SQLException;
 }

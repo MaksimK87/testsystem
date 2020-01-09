@@ -2,9 +2,10 @@ package by.htp.jd2.maksimkosmachev.test.entity;
 
 import by.htp.jd2.maksimkosmachev.test.entity.enumpackage.Role;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User extends Entity {
+public class User extends Entity implements Serializable {
     private String login;
     private String password;
     private String email;

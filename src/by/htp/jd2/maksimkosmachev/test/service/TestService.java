@@ -14,5 +14,11 @@ public interface TestService {
 
     List<Test> getAllTest() throws ServiceException;
 
+    int addTest(String name,int duration) throws ServiceException;
+
+    int addTestQuestion(String question,int testId) throws ServiceException;
+
+    void addAnswer(String answer, boolean isRight, int questionId) throws ServiceException;
+
 
 }

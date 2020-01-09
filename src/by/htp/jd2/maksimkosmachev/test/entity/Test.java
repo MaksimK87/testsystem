@@ -2,11 +2,12 @@ package by.htp.jd2.maksimkosmachev.test.entity;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Test extends Entity {
+public class Test extends Entity implements Serializable {
     private String testName;
     private int testDuration;
     private String questionText;

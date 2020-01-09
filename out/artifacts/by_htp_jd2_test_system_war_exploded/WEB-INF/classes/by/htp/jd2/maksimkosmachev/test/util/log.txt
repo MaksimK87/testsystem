@@ -420,3 +420,49 @@ java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
 2019-12-18 21:39:09 INFO  ConnectionPool:124 - connection was closed
 2019-12-18 21:39:09 INFO  ConnectionPool:130 - statement was closed
 2019-12-18 21:39:09 DEBUG SQLTestDAO:73 - closing connection from SQLTestDAO (method - addTest)
+2020-01-06 18:44:11 DEBUG SQLTestDAO:134 - In method add test name and duration
+2020-01-06 18:44:13 INFO  ConnectionPool:68 - Init pool data in constructor 
+2020-01-06 18:44:13 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2020-01-06 18:44:13 INFO  ConnectionPool:92 - connection was taken
+2020-01-06 18:44:13 DEBUG SQLTestDAO:150 - Execution ADD_TEST_NAME_AND_DURATION query was successful
+2020-01-06 18:44:13 INFO  ConnectionPool:124 - connection was closed
+2020-01-06 18:44:13 INFO  ConnectionPool:130 - statement was closed
+2020-01-06 18:44:13 DEBUG SQLTestDAO:161 - closing connection from SQLTestDAO (method - addTest)
+2020-01-07 22:36:16 DEBUG SQLTestDAO:170 - In method addTestQuestion
+2020-01-07 22:36:19 INFO  ConnectionPool:68 - Init pool data in constructor 
+2020-01-07 22:36:19 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2020-01-07 22:36:19 INFO  ConnectionPool:92 - connection was taken
+2020-01-07 22:36:20 DEBUG SQLTestDAO:184 - Execution ADD_TEST_QUESTION query was successful
+2020-01-07 22:36:20 INFO  ConnectionPool:124 - connection was closed
+2020-01-07 22:36:20 INFO  ConnectionPool:130 - statement was closed
+2020-01-07 22:36:20 DEBUG SQLTestDAO:193 - closing connection from SQLTestDAO (method - addTestQuestion)
+2020-01-07 23:29:14 DEBUG SQLTestDAO:170 - In method addTestQuestion
+2020-01-07 23:29:16 INFO  ConnectionPool:68 - Init pool data in constructor 
+2020-01-07 23:29:16 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2020-01-07 23:29:16 INFO  ConnectionPool:92 - connection was taken
+2020-01-07 23:29:16 DEBUG SQLTestDAO:216 - Execution query was successful
+2020-01-07 23:29:16 INFO  ConnectionPool:124 - connection was closed
+2020-01-07 23:29:16 INFO  ConnectionPool:130 - statement was closed
+2020-01-07 23:29:16 DEBUG SQLTestDAO:226 - closing connection from SQLTestDAO (method - addTestDetail)
+2020-01-07 23:30:03 DEBUG SQLTestDAO:135 - In method add test name and duration
+2020-01-07 23:30:06 INFO  ConnectionPool:68 - Init pool data in constructor 
+2020-01-07 23:30:06 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2020-01-07 23:30:06 INFO  ConnectionPool:92 - connection was taken
+2020-01-07 23:30:06 DEBUG SQLTestDAO:216 - Execution query was successful
+2020-01-07 23:30:06 INFO  ConnectionPool:124 - connection was closed
+2020-01-07 23:30:06 INFO  ConnectionPool:130 - statement was closed
+2020-01-07 23:30:06 DEBUG SQLTestDAO:226 - closing connection from SQLTestDAO (method - addTestDetail)
+2020-01-09 11:50:30 INFO  ConnectionPool:68 - Init pool data in constructor 
+2020-01-09 11:50:30 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2020-01-09 11:50:30 INFO  ConnectionPool:92 - connection was taken
+2020-01-09 11:50:30 INFO  ConnectionPool:124 - connection was closed
+2020-01-09 11:50:30 INFO  ConnectionPool:130 - statement was closed
+2020-01-09 11:50:30 DEBUG SQLTestDAO:176 - closing connection from SQLTestDAO (method - addTestDetail)
+2020-01-09 12:02:35 DEBUG SQLTestDAO:155 - In method addAnswer
+2020-01-09 12:02:39 INFO  ConnectionPool:68 - Init pool data in constructor 
+2020-01-09 12:02:39 INFO  ConnectionPool:51 - Connection pool object was created succesful
+2020-01-09 12:02:39 INFO  ConnectionPool:92 - connection was taken
+2020-01-09 12:02:39 DEBUG SQLTestDAO:171 - Execution query was successful in method addAnswer
+2020-01-09 12:02:39 INFO  ConnectionPool:124 - connection was closed
+2020-01-09 12:02:39 INFO  ConnectionPool:130 - statement was closed
+2020-01-09 12:02:39 DEBUG SQLTestDAO:178 - closing connection from SQLTestDAO (method - addAnswer)

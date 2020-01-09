@@ -19,9 +19,11 @@ public class SQLTestDAO implements TestDAO {
 
     @Override
     public void addTest(Test test) throws ConnectionPoolException, SQLException {
+
         logger.debug("In method addTest");
+
         PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
+
         ConnectionPool connectionPool = ConnectionPool.getInstance();
         Connection connection = connectionPool.takeConnection();
 
@@ -77,6 +79,7 @@ public class SQLTestDAO implements TestDAO {
 
     @Override
     public void editTest(Test test) throws ConnectionPoolException {
+
         logger.debug("In method edit test");
         Connection connection;
         PreparedStatement preparedStatement;
@@ -92,7 +95,9 @@ public class SQLTestDAO implements TestDAO {
     }
 
     public List<Test> getAllTest() throws SQLException, ConnectionPoolException {
+
         logger.debug("In get all test method");
+
         List<Test> tests = new ArrayList<>();
 
         PreparedStatement preparedStatement = null;
@@ -106,12 +111,14 @@ public class SQLTestDAO implements TestDAO {
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
+
                 logger.debug("result set is processing");
                 Test test = new Test();
                 test.setTestName(resultSet.getString(2));
                 test.setTestDuration(resultSet.getInt(3));
                 logger.debug("Test from DB: " + test.getTestName() + " duration: " + test.getTestDuration());
                 tests.add(test);
+
             }
         } finally {
             connectionPool.closeConnection(connection, preparedStatement);
@@ -122,4 +129,88 @@ public class SQLTestDAO implements TestDAO {
         return tests;
     }
 
+
+    public int addTest(String testName, int duration) throws ConnectionPoolException, SQLException {
+
+        logger.debug("In method add test name and duration");
+
+        int idTest = addTestDetail(testName, duration, ADD_TEST_NAME_AND_DURATION);
+
+        return idTest;
+    }
+
+    @Override
+    public int addTestQuestion(String question, int testId) throws ConnectionPoolException, SQLException {
+
+        logger.debug("In method addTestQuestion");
+
+        int idTestQuestion = addTestDetail(question, testId, ADD_TEST_QUESTION);
+
+        return idTestQuestion;
+    }
+
+    @Override
+    public void addAnswer(String answer, boolean isRight, int questionId) throws ConnectionPoolException, SQLException {
+
+        logger.debug("In method addAnswer");
+
+        PreparedStatement preparedStatement = null;
+
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        Connection connection = connectionPool.takeConnection();
+
+        try {
+
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(ADD_TEST_ANSWER);
+            preparedStatement.setString(1, answer);
+            preparedStatement.setBoolean(2, isRight);
+            preparedStatement.setInt(3, questionId);
+            preparedStatement.executeUpdate();
+
+            logger.debug("Execution query was successful in method addAnswer");
+
+        } finally {
+
+            connection.setAutoCommit(true);
+            connectionPool.closeConnection(connection, preparedStatement);
+
+            logger.debug("closing connection from SQLTestDAO (method - addAnswer)");
+        }
+
+    }
+
+    private int addTestDetail(String detail, int parameter, String query) throws SQLException, ConnectionPoolException {
+
+        PreparedStatement preparedStatement = null;
+        ResultSet id;
+        int idTest = 0;
+
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+        Connection connection = connectionPool.takeConnection();
+
+        try {
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, detail);
+            preparedStatement.setInt(2, parameter);
+            preparedStatement.executeUpdate();
+            logger.debug("Execution query was successful");
+            id = preparedStatement.getGeneratedKeys();
+            if (id.next()) {
+                idTest = id.getInt(1);
+
+            }
+
+        } finally {
+            connection.setAutoCommit(true);
+            connectionPool.closeConnection(connection, preparedStatement);
+            logger.debug("closing connection from SQLTestDAO (method - addTestDetail)");
+        }
+
+        return idTest;
+    }
 }
+
+
+

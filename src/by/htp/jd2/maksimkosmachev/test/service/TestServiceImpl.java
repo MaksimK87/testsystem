@@ -15,15 +15,25 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public void addTest(Test test) throws ServiceException {
+
         if (test != null) {
+
             DAOFactory daoFactory = DAOFactory.getInstance();
+
             try {
+
                 daoFactory.getTestDAO().addTest(test);
+
             } catch (ConnectionPoolException e) {
-                logger.error("Connection pool exception "+e);
+
+                logger.error("Connection pool exception " + e);
+
                 throw new ServiceException("Exception in connection pool " + e);
+
             } catch (SQLException e) {
-                logger.error("SQLException" +e);
+
+                logger.error("SQLException" + e);
+
                 throw new ServiceException("SQL exception " + e);
             }
         }
@@ -41,21 +51,122 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public List<Test> getAllTest() throws ServiceException {
+
         List<Test> tests;
+
         DAOFactory daoFactory = DAOFactory.getInstance();
+
         try {
+
             tests = daoFactory.getTestDAO().getAllTest();
+
         } catch (SQLException e) {
-            logger.error("SQLException" +e);
+
+            logger.error("SQLException" + e);
+
             throw new ServiceException("SQL exception " + e);
+
         } catch (ConnectionPoolException e) {
-            logger.error("Connection pool exception "+e);
+
+            logger.error("Connection pool exception " + e);
+
             throw new ServiceException("Exception in connection pool " + e);
         }
-        if(tests==null||tests.isEmpty()){
+
+        if (tests == null || tests.isEmpty()) {
+
             logger.error("Tests doesn't exist");
+
             throw new ServiceException("Tests doesn't exist!");
+
         }
         return tests;
     }
+
+    @Override
+    public int addTest(String name, int duration) throws ServiceException {
+
+        int testId=0;
+
+        if (name != null && !name.isEmpty() && duration > 0) {
+
+            DAOFactory daoFactory=DAOFactory.getInstance();
+
+            try {
+
+                testId=daoFactory.getTestDAO().addTest(name,duration);
+
+            } catch (ConnectionPoolException e) {
+
+                logger.error("Exception in method addTest by name and duration" +e);
+                throw new ServiceException("Exception in method addTest by name and duration" +e);
+
+            } catch (SQLException e) {
+
+               logger.error("SQLException in method addTest by name and duration " + e);
+               throw new ServiceException("SQL exception in method addTest by name and duration " + e);
+
+            }
+
+        }
+        return testId;
+    }
+
+    @Override
+    public int addTestQuestion(String question, int testId) throws ServiceException {
+        
+        int idTestQuestion = 0;
+
+        if(question!=null&&!question.isEmpty() && testId>0){
+            
+            DAOFactory daoFactory=DAOFactory.getInstance();
+
+            try {
+
+                idTestQuestion=daoFactory.getTestDAO().addTestQuestion(question,testId);
+
+            } catch (ConnectionPoolException e) {
+
+                logger.error("Exception in method addTestQuestion " +e);
+
+                throw new ServiceException("Exception in method addTestQuestion " +e);
+
+            } catch (SQLException e) {
+
+                logger.error("SQLException in method addTestQuestion " + e);
+
+                throw new ServiceException("SQLException in method addTestQuestion " + e);
+            }
+        }
+        
+        return idTestQuestion;
+    }
+
+    @Override
+    public void addAnswer(String answer, boolean isRight, int questionId) throws ServiceException {
+
+        if(answer!=null&&!answer.isEmpty()&& questionId>0){
+
+            DAOFactory daoFactory=DAOFactory.getInstance();
+
+            try {
+
+               daoFactory.getTestDAO().addAnswer(answer,isRight,questionId);
+
+            } catch (ConnectionPoolException e) {
+
+                logger.error("Exception in method addAnswer " +e);
+
+                throw new ServiceException("Exception in method addAnswer " +e);
+
+            } catch (SQLException e) {
+
+                logger.error("SQLException in method addAnswer " + e);
+
+                throw new ServiceException("SQLException in method addAnswer " + e);
+            }
+        }
+    }
+
+
 }

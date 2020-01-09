@@ -25,7 +25,14 @@ public class Main {
     public static void main(String[] args) {
 
         SQLTestDAO sqlTestDAO = new SQLTestDAO();
-        Test test = new Test();
+        try {
+            sqlTestDAO.addAnswer("right answer",true,23);
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       /* Test test = new Test();
         test.setTestName("Threads");
         test.setTestDuration(30);
         HashMap<String, Boolean> answers = new HashMap<>();
@@ -40,7 +47,7 @@ public class Main {
         System.out.println(answers.get("Answer 1"));
 
         test.getTest().put("Question 11-31",answers );
-        test.getTest().put("Question 41-61",answers1);
+        test.getTest().put("Question 41-61",answers1);*/
 
 
         /*for(Map.Entry entry:test.getTest().entrySet()){
@@ -54,6 +61,7 @@ public class Main {
 
 
 
+/*
 
         try {
             sqlTestDAO.addTest(test);
@@ -62,8 +70,9 @@ public class Main {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+*/
 
-//        ResourceBundle resourceBundle=ResourceBundle.getBundle("by.htp.jd2.maksimkosmachev.test.resources.local",new Locale("by","by"));
+//        ResourceBundle resourceBundle=ResourceBundle.getBundle("resources.local",new Locale("by","by"));
 //        System.out.println(resourceBundle.getString("local.registration"));
 
        /* User user;
@@ -149,7 +158,6 @@ public class Main {
 
     public void method(int x) {
         System.out.println("meth x " + x++);
-        ;
     }
 
 }
